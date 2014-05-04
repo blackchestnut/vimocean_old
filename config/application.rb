@@ -24,7 +24,7 @@ module Vimocean
       g.fixture_replacement :factory_girl, dir: 'spec/factories'
       g.template_engine :slim
       g.stylesheets false
-      g.helperfalse
+      g.helper false
       g.helper_specs false
       g.view_specs false
       g.test_framework :rspec
