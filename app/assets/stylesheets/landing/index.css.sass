@@ -1,0 +1,29 @@
+@import compass
+@import mixins/font-smoothing
+
+.landing.index
+  header
+    +background-image(radial-gradient(300px 300px, #1ca338 0, #009b4e 900px))
+    background-color: #009b4e
+    height: 346px
+    color: #fff
+    text-align: center
+    font-family: 'BentonSans', 'Helvetica Neue', 'Helvetica', 'Arial', 'Geneva', 'sans-serif'
+    padding-top: 64px
+
+    h1,h2
+      +font-smoothing
+      margin: 0
+      font-weight: 200
+
+    h1
+      font-size: 64px
+
+    h2
+      font-size: 22px
+
+    .logo
+      background: transparent inline-image('logo.png') no-repeat
+      width: 110px
+      height: 110px
+      margin: 30px auto
