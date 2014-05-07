@@ -1,14 +1,21 @@
 .landing.index
+  .sign_in.rbutton.pop Sign in
   header
     h1 vimocean
-    h2 will be proactive in your life
+    /h2 be proactive in your life
+    h2 be proactive, life is only one
     .logo
   .content
-    /.price
+    .price
+      .background
+      .content
+        .value $69
+        .description all time
+
     .registration
       = simple_form_for(@user, url: registration_path(@user)) do |f|
         = f.input :name, required: true, autofocus: true, input_html: { placeholder: 'Username', maxlength: 200 }
         = f.input :email, required: true, input_html: { placeholder: 'Email', maxlength: 200 }
         = f.input :password, required: true, input_html: { placeholder: 'Password', maxlength: 200 }
-        = f.button :submit
+        = f.button :submit, value: 'Sign up for Vimocean', class: 'pop'
   footer
