@@ -29,17 +29,53 @@
         z-index: 2
 
     .quests
-      background-color: blue
       display: inline-block
       min-height: 100px
       vertical-align: top
       width: 400px
-      margin: 100px 20px
+      margin: 100px 50px
+
+      ul
+        margin-top: 30px
+        padding-left: 0
+
+      a
+        color: $primary_color
+        display: inline-block
+        font-size: 26px
+        height: 50px
+        margin-bottom: 20px
+
+        .logo
+          +border-radius(26px)
+          background-color: $primary_color
+          color: #fff
+          display: inline-block
+          font-weight: 400
+          height: 50px
+          line-height: 50px
+          margin-right: 8px
+          text-align: center
+          width: 50px
 
     .menu
-      background-color: red
       float: right
       display: inline-block
       height: 40px
       vertical-align: top
       width: 40px
+
+      li
+        margin-bottom: 10px
+
+      a
+        +border-radius(26px)
+        color: #fff
+        display: inline-block
+        font-size: 26px
+        font-weight: 400
+        height: 50px
+        line-height: 50px
+        margin-right: 8px
+        text-align: center
+        width: 50px
