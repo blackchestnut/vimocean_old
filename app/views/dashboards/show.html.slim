@@ -1,22 +1,26 @@
 .dashboards.show
   .content
     .profile
-      a.badge.pop-more href="#{dashboard_url}" 2
+      a.badge.pop href="#{dashboard_url}" 2
     .quests
       h1 At first time
       ul
+        - if current_user.mission.blank?
+          li
+            a.pop_lite href="#{new_mission_url}"
+              span.logo M
+              | Enter your mission
         li
-          a.pop href="#mission"
-            span.logo M
-            | Enter your mission
-        li
-          a.pop href="#roles"
+          a.pop_lite href="#roles"
             span.logo R
             | Enter your roles
     ul.menu
       li
-        a.calender.disabled.hor href="#calendar" title='Your calendar' C
+        a.btn_menu.disabled.hor href="#calendar" title='Your calendar' C
       li
-        a.misson.disabled.hor href="#mission" title='Your mission' M
+        - if current_user.mission
+          a.btn_menu.pop href="#{mission_url current_user.mission}" title='Your mission' M
+        - else
+          a.btn_menu.disabled.hor href="#mission" title='Your mission' M
       li
-        a.roles.disabled.hor href="#roles" title='Your roles' R
+        a.btn_menu.disabled.hor href="#roles" title='Your roles' R

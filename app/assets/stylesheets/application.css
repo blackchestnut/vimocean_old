@@ -2,4 +2,5 @@
  *= require common
  *= require_tree ./landing/
  *= require_tree ./dashboards/
+ *= require_tree ./missions/
  */

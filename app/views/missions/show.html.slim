@@ -1,0 +1,9 @@
+.missions.show
+  .content
+    h1 Your current mission
+    p = @mission.text
+    .btn_group
+      a.btn_primary.pop href="#{edit_mission_url @mission}" Edit
+      a.btn_empty.pop href="#{dashboard_url}" <
+
+
