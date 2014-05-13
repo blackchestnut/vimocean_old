@@ -1,0 +1,13 @@
+.roles.index
+  .content
+    h1 Your roles
+    = simple_form_for(Role.new) do |f|
+      = f.input :name, required: true, autofocus: true, input_html: { placeholder: 'Role name' }
+    .list
+      ul
+        - @roles.each do |role|
+          li = role.name
+    .exapmles
+    .btn_group
+      a.btn_empty.pop href="#{dashboard_url}" <
+
