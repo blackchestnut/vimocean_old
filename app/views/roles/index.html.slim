@@ -1,13 +1,22 @@
 .roles.index
   .content
     h1 Your roles
-    = simple_form_for(Role.new) do |f|
-      = f.input :name, required: true, autofocus: true, input_html: { placeholder: 'Role name' }
     .list
-      ul
-        - @roles.each do |role|
-          li = role.name
-    .exapmles
+      = simple_form_for(Role.new) do |f|
+        = f.button :submit, value: '+', class: 'btn_primary btn_mini pop'
+        = f.input :name, required: true, autofocus: true, input_html: { placeholder: 'Role name' }
+        ol
+          - current_user.roles.each do |role|
+            li
+              = role.name
+              = link_to 'x', role_url(role), method: :delete, data: {confirm: 'Are you sure?'}, class: 'btn_white btn_mini pop'
+
+    - if @actual_examples.present?
+      .examples
+        h2 Examples
+        ul
+          - @actual_examples.each do |role_example|
+            li: a href="#" < #{role_example}
     .btn_group
-      a.btn_empty.pop href="#{dashboard_url}" <
+      a.btn_white.pop href="#{dashboard_url}" <
 

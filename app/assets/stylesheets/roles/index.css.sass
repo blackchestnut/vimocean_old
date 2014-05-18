@@ -1,0 +1,42 @@
+@import compass/css3
+@import mixins/font-smoothing
+@import mixins/variables
+
+.roles.index
+  .list
+    display: inline-block
+    width: 460px
+
+    form
+      width: 360px
+      .button
+        margin: 3px 0 0 0
+        float: right
+
+      ol
+        li
+          font-size: 20px
+          margin: 18px auto
+
+          a
+            margin-top: -5px
+            float: right
+
+  .examples
+    +border-radius(14px)
+    display: inline-block
+    padding: 20px
+    background-color: $block_color
+    color: #fff
+    vertical-align: top
+    width: 200px
+
+    ul
+      margin: 10px 0 0 10px
+      li
+        margin: 6px auto
+
+    a
+      +font-smoothing
+      color: #fff
+      font-size: 18px

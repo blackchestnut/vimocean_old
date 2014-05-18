@@ -5,5 +5,5 @@ class User < ActiveRecord::Base
          :recoverable, :rememberable, :trackable, :validatable
 
   has_one :mission
-  has_many :roles
+  has_and_belongs_to_many :roles
 end

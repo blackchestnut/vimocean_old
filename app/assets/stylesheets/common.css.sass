@@ -46,6 +46,8 @@ a
 
 ul
   list-style-type: none
+  padding: 0
+  margin: 0
 
 .button
   +font-smoothing
@@ -53,14 +55,12 @@ ul
   border: none
   color: #fff
   cursor: pointer
-  &:hover
-    +background-image(linear-gradient($primary_color, $secondary_color))
-    background-color: $secondary_color
+  padding: 0
 
-.btn, .btn_ok, .btn_primary, .btn_cancel, .btn_empty, .btn_menu
+.btn_green, .btn_ok, .btn_primary, .btn_white, .btn_menu
   +border-radius(26px)
   +box-sizing(border-box)
-  background-color: $primary_color
+  border: 1px solid $primary_color
   color: #fff
   cursor: pointer
   display: inline-block
@@ -70,18 +70,25 @@ ul
   line-height: 48px
   text-align: center
 
-.btn, .btn_ok, .btn_primary, .btn_cancel, .btn_empty
+.btn_mini
+  height: 34px
+  width: 34px
+  line-height: 30px
+
+.btn_ok, .btn_primary, .btn_green
+  background-color: $primary_color
+  &:hover
+    +background-image(linear-gradient($primary_color, $secondary_color))
+    background-color: $secondary_color
+
+.btn_green, .btn_ok, .btn_primary, .btn_white
   +font-smoothing
 
-.btn_ok, .btn_cancel
-  line-height: 46px
-
-.btn_cancel, .btn_empty
-  background-color: #fff
-  border: 1px solid $primary_color
+.btn_white
   color: $primary_color
 
 .btn_menu
+  background-color: $primary_color
   font-size: 26px
   font-weight: 400
   line-height: 50px
@@ -102,6 +109,10 @@ p
 
 .disabled
   background-color: $disabled_color
+  border-color: $disabled_color
+
+.muted
+  color: $muted_color
 
 .pop_lite, .pop
   -webkit-transform: translateZ(0)
