@@ -5,6 +5,7 @@ Rails.application.routes.draw do
   resource :dashboard, only: :show
   resources :missions
   resources :roles
+  get 'roles/:name/add' => 'roles#add', as: :add_role
 
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".

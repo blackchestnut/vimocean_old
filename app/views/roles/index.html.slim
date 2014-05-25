@@ -16,7 +16,7 @@
         h2 Examples
         ul
           - @actual_examples.each do |role_example|
-            li: a href="#" < #{role_example}
+            li: a href="#{add_role_url(role_example)}" < #{role_example}
     .btn_group
       a.btn_white.pop href="#{dashboard_url}" <
 
