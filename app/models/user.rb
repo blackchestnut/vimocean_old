@@ -6,4 +6,5 @@ class User < ActiveRecord::Base
 
   has_one :mission
   has_and_belongs_to_many :roles
+  has_many :tasks
 end
