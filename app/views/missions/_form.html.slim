@@ -4,4 +4,4 @@
     = simple_form_for(@mission) do |f|
       = f.input :text, required: true, autofocus: true, input_html: { placeholder: 'Mission text' }
       = f.button :submit, value: 'Ok', class: 'btn_ok pop'
-      a.btn_white.pop href="#{dashboard_url}" x
+      a.btn_white.pop href="#{@mission.persisted? ? mission_url(@mission) : dashboard_url}" x

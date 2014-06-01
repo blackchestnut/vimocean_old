@@ -27,7 +27,7 @@ class MissionsController < ApplicationController
 
   def update
     if @mission.update_attributes mission_params
-      redirect_to dashboard_url
+      redirect_to mission_url @mission
     else
       render action: :new
     end
