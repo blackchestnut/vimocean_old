@@ -9,7 +9,7 @@
           - current_user.roles.each do |role|
             li
               = role.name
-              = link_to 'x', role_url(role), method: :delete, data: {confirm: 'Are you sure?'}, class: 'btn_white btn_mini pop'
+              = link_to 'x', role, method: :delete, data: {confirm: 'Are you sure?'}, class: 'btn_white btn_mini pop'
 
     - if @actual_examples.present?
       .examples
