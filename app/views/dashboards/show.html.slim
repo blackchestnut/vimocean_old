@@ -22,9 +22,16 @@
               | Plane first week
       - else
         h1 Ready to plan
+        ul
+          li: a.pop_lite href="#calendar"
+            span.logo C
+            | Your week calendar
     ul.menu
       li
-        a.btn_menu.disabled.hor href="#calendar" title='Your calendar' C
+        - if current_user.mission && current_user.roles.present?
+          a.btn_menu.pop.hor href="#calendar" title='Your calendar' C
+        - else
+          a.btn_menu.disabled.hor href="#calendar" title='Your calendar' C
       li
         - if current_user.mission
           a.btn_menu.pop href="#{mission_url current_user.mission}" title='Your mission' M
