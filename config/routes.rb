@@ -3,6 +3,7 @@ Rails.application.routes.draw do
   root 'landing#index'
 
   resource :dashboard, only: :show
+  resource :calendar, only: :show
   resources :missions
   resources :roles
   get 'roles/:name/add' => 'roles#add', as: :add_role
