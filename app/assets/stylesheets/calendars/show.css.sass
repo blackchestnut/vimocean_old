@@ -1,0 +1,21 @@
+@import compass/css3
+@import mixins/variables
+
+.calendars.show
+  .content
+    max-width: 100%
+    margin: 20px 20px
+
+    .week
+      margin-top: 10px
+      .day
+        display: inline-block
+        width: 14%
+
+        &.odd
+          +border-radius(4px)
+          background-color: #efffef
+
+        .title
+          text-align: center
+          margin: 10px auto

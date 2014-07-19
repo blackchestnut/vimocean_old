@@ -4,4 +4,5 @@
  *= require_tree ./dashboards/
  *= require_tree ./missions/
  *= require_tree ./roles/
+ *= require_tree ./calendars/
  */

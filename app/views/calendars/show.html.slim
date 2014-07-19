@@ -1,4 +1,8 @@
 .calendars.show
   .content
-    h1 Calendar#show
-    p Find me in app/views/calendar/show.html.slim
+    h1 Calendar #{@first_date.strftime '%d %b'} ..  #{@last_date.strftime '%d %b %Y'}
+
+    .week
+      - @week.each_with_index do |day, index|
+        .day class="#{:odd if index.odd? }"
+          .title.muted = day.strftime '%d %b'
