@@ -4,5 +4,14 @@
 
     .week
       - @week.each_with_index do |day, index|
-        .day class="#{:odd if index.odd? }"
-          .title.muted = day.strftime '%d %b'
+        .day
+          .title.muted class="#{:odd if index.odd? }" = day.strftime '%d %b'
+          a href="#{}" Add task...
+
+      .hours
+        - (0..23).each do |hour|
+          .hour.muted #{hour}:00
+          - @week.each_with_index do |day, index|
+            .day_hour
+              = "#{index}_#{hour}"
+

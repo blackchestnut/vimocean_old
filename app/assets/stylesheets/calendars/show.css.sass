@@ -8,14 +8,31 @@
 
     .week
       margin-top: 10px
+      margin-left: 20px
+      position: relative
+
       .day
         display: inline-block
         width: 14%
 
-        &.odd
-          +border-radius(4px)
-          background-color: #efffef
-
         .title
           text-align: center
-          margin: 10px auto
+          padding: 10px
+
+          &.odd
+            +border-radius(4px)
+            background-color: #efffef
+
+        a
+          margin: 4px 10px
+          display: inline-block
+
+      .hours
+        .hour
+          border-bottom: solid 1px #eee
+          margin-left: -20px
+          font-size: 12px
+
+        .day_hour
+          display: inline-block
+          width: 14%
