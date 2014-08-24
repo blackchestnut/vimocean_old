@@ -6,7 +6,7 @@
       - @week.each_with_index do |day, index|
         .day
           .title.muted class="#{:odd if index.odd? }" = day.strftime '%d %b'
-          a href="#{}" Add task...
+          a href="#{new_task_url}" Add task...
 
       .hours
         - (0..23).each do |hour|
