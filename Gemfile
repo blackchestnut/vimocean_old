@@ -1,46 +1,45 @@
 source 'https://rubygems.org'
 
-gem 'rails', '4.1.1'
-gem 'pg'
-gem 'sass-rails', '~> 4.0.3'
+
+gem 'awesome_print'
+gem 'bcrypt'
+gem 'coffee-rails'
 gem 'compass-rails'
-gem 'uglifier', '>= 1.3.0'
-gem 'coffee-rails', '~> 4.0.0'
+gem 'devise'
+gem 'draper', '~> 1.3'
+gem 'enumerize'
+gem 'jbuilder'
 gem 'jquery-rails'
-gem 'turbolinks'
 gem 'jquery-turbolinks'
-gem 'jbuilder', '~> 2.0'
-gem 'sdoc', '~> 0.4.0', group: :doc
+gem 'pg'
+gem 'rails', '~> 4.1.7'
+gem 'russian'
+gem 'sass-rails'
+gem 'simple_form'
 gem 'slim'
 gem 'slim-rails'
-gem 'simple_form'
-gem 'devise'
-
-# See https://github.com/sstephenson/execjs#readme for more supported runtimes
-# gem 'therubyracer',  platforms: :ruby
-gem 'bcrypt', '~> 3.1.7' # Use ActiveModel has_secure_password
-gem 'unicorn'
-gem 'awesome_print'
+gem 'therubyracer',  platforms: :ruby
+gem 'turbolinks'
+gem 'uglifier'
 
 group :development do
-  # Spring speeds up development by keeping your application running in the background. Read more: https://github.com/rails/spring
-  gem 'spring'
-  gem 'capistrano-rails'
   gem 'better_errors'
   gem 'binding_of_caller'
+  gem 'meta_request'
   gem 'quiet_assets'
-  gem 'pry-rails'
   gem 'rack-mini-profiler'
-
-# Gems from mybudget repo
-  #gem 'capistrano'
-  #gem 'rvm-capistrano'
 end
 
-group :test do
-  gem 'factory_girl_rails'
-  gem 'guard-rspec'
+group :test, :development do
   gem 'rspec-rails'
+  gem 'rspec-its'
+  gem 'rspec-collection_matchers'
+  gem 'factory_girl_rails'
+  gem 'capybara'
+  gem 'rb-fsevent'
+  gem 'guard-rspec'
+  gem 'shoulda'
   gem 'shoulda-matchers'
+  gem 'spring'
   gem 'database_cleaner'
 end

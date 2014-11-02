@@ -20,6 +20,14 @@ module Vimocean
     # config.i18n.load_path += Dir[Rails.root.join('my', 'locales', '*.{rb,yml}').to_s]
     # config.i18n.default_locale = :de
 
+    # Like Uptimus
+    #config.autoload_paths += Dir["#{config.root}/app/**/"]#.select {|v| v !~ %r{/admin/$} }
+    #config.autoload_paths += Dir["#{config.root}/lib/**/"]
+    #config.assets.precompile += Dir.new(Rails.root.join('app', 'assets', 'javascripts')).each.select {|v| v =~ /coffee/ }.map { |v| v.sub(/\.coffee/, '') }
+    #config.assets.precompile += Dir.new(Rails.root.join('app', 'assets', 'stylesheets')).each.select {|v| v =~ /s[ca]ss/ }.map { |v| v.sub(/\.s[ca]ss/, '') }
+
+    config.assets.paths << Rails.root.join('app', 'assets', 'fonts')
+
     config.generators do |g|
       g.fixture_replacement :factory_girl, dir: 'spec/factories'
       g.template_engine :slim
