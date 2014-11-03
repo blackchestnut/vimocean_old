@@ -7,5 +7,8 @@
       = f.input :started_at, input_html: { placeholder: 'Started at' }
       = f.input :finished_at, input_html: { placeholder: 'Finished at' }
 
-      = f.button :submit, value: 'Ok', class: 'btn_ok pop'
-      a.btn_white.pop href="#{calendar_url}" x
+      .actions
+        = f.button :submit, value: 'Ok', class: 'btn_ok pop'
+        a.btn_white.pop href="#{calendar_url}" x
+        - if @scheduled_task_form.id.present?
+          = link_to 'DEL', @schedule, method: :delete, data: { confirm: 'Are you sure?' }, class: 'btn_del pop'

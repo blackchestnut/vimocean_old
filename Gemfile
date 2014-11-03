@@ -18,6 +18,7 @@ gem 'sass-rails'
 gem 'simple_form'
 gem 'slim'
 gem 'slim-rails'
+gem 'state_machine'
 gem 'therubyracer',  platforms: :ruby
 gem 'turbolinks'
 gem 'uglifier'

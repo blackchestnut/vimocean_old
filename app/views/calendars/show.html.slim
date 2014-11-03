@@ -2,9 +2,11 @@
   .content
     h1
       | Calendar
-      a.prev.btn_mini.btn_white href="#prev" <
+      a.prev.btn_white_mini.pop href="#prev" <
       span #{@started_at.strftime '%d %b'} ..  #{@finished_at.strftime '%d %b %Y'}
-      a.next.btn_mini.btn_white href="#next" >
+      a.next.btn_white_mini.pop href="#next" >
+
+    .close.pop href="#{dashboard_url}" x
 
     .week
       - @week.each_with_index do |day, index|
@@ -16,15 +18,12 @@
           .day_schedule
             - @schedules.each do |schedule|
               - if schedule.started_at >= day.beginning_of_day && schedule.finished_at <= day.end_of_day
-                .task
-                  a.name href="#{edit_task_url(schedule)}" = schedule.task.name
+                .task class="#{schedule.state}"
+                  .name = schedule.task.name
+                  .actions
+                    a.done.pop href="#{done_schedule_url(schedule)}" DONE
+                    a.cancel.pop href="#{cancel_schedule_url(schedule)}" Cancel
+                    a.edit.pop href="#{edit_task_url(schedule)}" Edit
             .actions
-              a.btn_white_mini href="#{new_task_url}" +
-
-      /.hours
-        - (0..23).each do |hour|
-          .hour.muted #{hour}:00
-          - @week.each_with_index do |day, index|
-            .day_hour
-              = "#{index}_#{hour}"
+              a.btn_white_mini.pop href="#{new_task_url(date: day.strftime('%Y-%m-%d'))}" +
 

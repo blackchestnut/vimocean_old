@@ -1,6 +1,10 @@
 class TasksController < ApplicationController
   def new
-    @scheduled_task_form = ScheduledTaskForm.new current_user
+    @started_at = params[:date] ? Time.zone.parse(params[:date]) : Time.zone.now
+    @started_at = Time.zone.now if @started_at.today?
+    @finished_at = @started_at + 1.hour
+    @schedule = Schedule.new(user: current_user, started_at: @started_at, finished_at: @finished_at)
+    @scheduled_task_form = ScheduledTaskForm.new(current_user, @schedule)
   end
 
   def create

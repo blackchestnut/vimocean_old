@@ -43,13 +43,28 @@
   +btn_circle_white_base
   +btn_circle_mini_base
 
-.btn_green, .btn_ok, .btn_primary
+@mixin btn_circle_primari
   +btn_circle_base
   +font-smoothing
   background-color: $primary_color
   &:hover
     +background-image(linear-gradient($primary_color, $secondary_color))
     background-color: $secondary_color
+
+@mixin btn_circle_danger
+  +btn_circle_base
+  +font-smoothing
+  background-color: $danger_primary_color
+  border: 1px solid $danger_primary_color
+  &:hover
+    +background-image(linear-gradient($danger_primary_color, $danger_secondary_color))
+    background-color: $danger_secondary_color
+
+.btn_green, .btn_ok, .btn_primary
+  +btn_circle_primari
+
+.btn_del
+  +btn_circle_danger
 
 .btn_menu
   +btn_circle_base
