@@ -2,6 +2,7 @@
   .content
     h1 Enter new task
     = simple_form_for @scheduled_task_form do |f|
+      = f.input :id, as: :hidden
       = f.input :name, autofocus: true, input_html: { placeholder: 'Task name' }
       = f.input :started_at, input_html: { placeholder: 'Started at' }
       = f.input :finished_at, input_html: { placeholder: 'Finished at' }

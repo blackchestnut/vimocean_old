@@ -27,7 +27,12 @@ $day_width: 14%
           text-align: center
           padding: 10px
 
-          &.odd
+          &.today
+            +border-radius(4px)
+            background-color: #d7fed7
+            margin: 0 2px
+
+          //&.odd
             +border-radius(4px)
             background-color: #efffef
 
@@ -39,9 +44,19 @@ $day_width: 14%
         .day_schedule
           display: inline-block
           width: $day_width
+          vertical-align: top
 
           .task
+            +border-radius(4px)
+            background-color: #efffef
+            margin: 4px 2px
+            padding: 6px
+
             .name
+
+          .actions
+            margin-top: 10px
+            text-align: center
 
 
       //.hours

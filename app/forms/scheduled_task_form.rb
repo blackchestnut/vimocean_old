@@ -2,25 +2,24 @@ class ScheduledTaskForm
   include ActiveModel::Model
 
   delegate :name, to: :task
-  delegate :started_at, :finished_at, to: :schedule
+  delegate :id, :started_at, :finished_at, to: :schedule
 
   validates :name, presence: true
   validates :started_at, presence: true
   validates :finished_at, presence: true
 
-  def initialize user
+  def initialize user, schedule=nil
     @user = user
+    @schedule = schedule
+    @task = schedule.try(:task)
   end
 
   def submit params
-    task.attributes = params.slice :name
-    schedule.attributes = params.slice :started_at, :finished_at
-    schedule.user = @user
+    task(params[:name]).attributes = params.slice :name
+    schedule(params[:id]).attributes = params.slice :started_at, :finished_at
     if valid?
-      task_db = Task.find_by(user_id: @user, name: task.name) || task
-      task_db.schedules << schedule
-      task_db.user = @user
-      task_db.save!
+      schedule.task = task
+      schedule.save!
       true
     else
       false
@@ -35,11 +34,15 @@ class ScheduledTaskForm
     false
   end
 
-  def task
-    @task ||= Task.new
+  def task name=nil
+    @task ||= (@user.tasks.find_by(name: name) if name) || Task.new(user: @user)
   end
 
-  def schedule
-    @schedule ||= Schedule.new
+  def schedule id=nil
+    @schedule ||= if id.present?
+      @user.schedules.find(id)
+    else
+      Schedule.new(user: @user, started_at: Time.zone.now, finished_at: Time.zone.now)
+    end
   end
 end
