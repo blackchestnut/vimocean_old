@@ -20,12 +20,29 @@
             a.pop_lite href="#"
               span.logo C
               | Plane first week
-      - else
+      - elsif current_user.schedules.blank?
         h1 Ready to plan
         ul
           li: a.pop_lite href="#{calendar_url}"
             span.logo C
             | Your weekly calendar
+      - else
+        .schedules
+          - if @overdue_schedules.present?
+            h1 Overdue tasks
+            ul
+              - @overdue_schedules.each do |schedule|
+                li = schedule.task.name
+          - if @closest_schedules.present?
+            h1 Closest tasks
+            ul
+              - @closest_schedules.each do |schedule|
+                li = schedule.task.name
+          - if @tomorrow_schedules.present?
+            h1 Tomorrow`s tasks
+            ul
+              - @tomorrow_schedules.each do |schedule|
+                li = schedule.task.name
     ul.menu
       li
         - if current_user.mission && current_user.roles.present?
