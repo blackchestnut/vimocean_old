@@ -1,0 +1,62 @@
+@import compass/css3
+@import mixins/font-smoothing
+@import mixins/variables
+
+@mixin btn_form_base
+  +font-smoothing
+  background-color: $primary_color
+  border: none
+  color: #fff
+  cursor: pointer
+  padding: 0
+
+.button, .btn
+  +btn_form_base
+
+@mixin btn_circle_base
+  +border-radius(26px)
+  +box-sizing(border-box)
+  border: 1px solid $primary_color
+  color: #fff
+  cursor: pointer
+  display: inline-block
+  height: 50px
+  width: 50px
+  font-size: 16px
+  line-height: 48px
+  text-align: center
+
+@mixin btn_circle_mini_base
+  height: 34px
+  width: 34px
+  line-height: 30px
+
+@mixin btn_circle_white_base
+  +btn_circle_base
+  +font-smoothing
+  color: $primary_color
+
+.btn_white
+  +btn_circle_white_base
+
+.btn_white_mini
+  +btn_circle_white_base
+  +btn_circle_mini_base
+
+.btn_green, .btn_ok, .btn_primary
+  +btn_circle_base
+  +font-smoothing
+  background-color: $primary_color
+  &:hover
+    +background-image(linear-gradient($primary_color, $secondary_color))
+    background-color: $secondary_color
+
+.btn_menu
+  +btn_circle_base
+  background-color: $primary_color
+  font-size: 26px
+  font-weight: 400
+  line-height: 50px
+
+.btn_mini
+  +btn_circle_mini_base

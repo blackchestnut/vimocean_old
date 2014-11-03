@@ -1,6 +1,7 @@
 @import compass/css3
 @import mixins/font-smoothing
 @import mixins/variables
+@import mixins/buttons
 
 body
   color: $primary_color
@@ -55,50 +56,6 @@ ul
   padding: 0
   margin: 0
 
-.button
-  +font-smoothing
-  background-color: $primary_color
-  border: none
-  color: #fff
-  cursor: pointer
-  padding: 0
-
-.btn_green, .btn_ok, .btn_primary, .btn_white, .btn_menu
-  +border-radius(26px)
-  +box-sizing(border-box)
-  border: 1px solid $primary_color
-  color: #fff
-  cursor: pointer
-  display: inline-block
-  height: 50px
-  width: 50px
-  font-size: 16px
-  line-height: 48px
-  text-align: center
-
-.btn_mini
-  height: 34px
-  width: 34px
-  line-height: 30px
-
-.btn_ok, .btn_primary, .btn_green
-  background-color: $primary_color
-  &:hover
-    +background-image(linear-gradient($primary_color, $secondary_color))
-    background-color: $secondary_color
-
-.btn_green, .btn_ok, .btn_primary, .btn_white
-  +font-smoothing
-
-.btn_white
-  color: $primary_color
-
-.btn_menu
-  background-color: $primary_color
-  font-size: 26px
-  font-weight: 400
-  line-height: 50px
-
 form, .btn_group
   margin-top: 10px
 
@@ -120,6 +77,7 @@ p
 .muted
   color: $muted_color
 
+// Transform for buttons and others
 .pop_lite, .pop
   -webkit-transform: translateZ(0)
   transform: translateZ(0)
