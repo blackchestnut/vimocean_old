@@ -1,6 +1,10 @@
 .calendars.show
   .content
-    h1 Calendar #{@first_date.strftime '%d %b'} ..  #{@last_date.strftime '%d %b %Y'}
+    h1
+      | Calendar
+      a.prev.btn_mini.btn_white href="#prev" <
+      span #{@started_at.strftime '%d %b'} ..  #{@finished_at.strftime '%d %b %Y'}
+      a.next.btn_mini.btn_white href="#next" >
 
     .week
       - @week.each_with_index do |day, index|
@@ -8,7 +12,15 @@
           .title.muted class="#{:odd if index.odd? }" = day.strftime '%d %b'
           a href="#{new_task_url}" Add task...
 
-      .hours
+      .schedules
+        - @week.map{ |day| day.to_time }.each do |day|
+          .day_schedule
+            - @schedules.each do |schedule|
+              - if schedule.started_at >= day.beginning_of_day && schedule.finished_at <= day.end_of_day
+                .task
+                  .name = schedule.task.name
+
+      /.hours
         - (0..23).each do |hour|
           .hour.muted #{hour}:00
           - @week.each_with_index do |day, index|

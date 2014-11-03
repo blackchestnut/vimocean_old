@@ -15,6 +15,7 @@ class ScheduledTaskForm
   def submit params
     task.attributes = params.slice :name
     schedule.attributes = params.slice :started_at, :finished_at
+    schedule.user = @user
     if valid?
       task_db = Task.find_by(user_id: @user, name: task.name) || task
       task_db.schedules << schedule
