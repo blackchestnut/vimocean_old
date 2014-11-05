@@ -6,7 +6,7 @@
       span #{@started_at.strftime '%d %b'} ..  #{@finished_at.strftime '%d %b %Y'}
       a.next.btn_white_mini.pop href="#next" >
 
-    a.close.pop href="#{dashboard_url}" x
+    a.close.pop href="#{dashboard_url}" <
 
     .week
       - @week.each_with_index do |day, index|
