@@ -1,6 +1,7 @@
 @import compass/css3
 @import mixins/variables
 @import mixins/buttons
+@import mixins/texts
 
 $day_width: 14%
 
@@ -33,6 +34,7 @@ $day_width: 14%
         width: $day_width
 
         .title
+          +secondary_text
           text-align: center
           padding: 10px
 
@@ -96,10 +98,14 @@ $day_width: 14%
                   float: right
                   font-size: 10px
 
+
+            .name
+            .duration
+              +secondary_text
+              font-size: 12px
             .actions
               display: none
 
-            .name
 
           .actions
             margin-top: 10px

@@ -11,15 +11,16 @@
     .week
       - @week.each_with_index do |day, index|
         .day
-          .title.muted class="#{:today if day.today? }" = day.strftime '%d %b'
+          .title class="#{:today if day.today? }" = day.strftime '%d %b'
 
       .schedules
         - @week.map{ |day| day.to_time }.each do |day|
           .day_schedule
             - @schedules.each do |schedule|
               - if schedule.started_at >= day.beginning_of_day && schedule.finished_at <= day.end_of_day
-                .task class="#{schedule.state}"
+                .task class="#{schedule.state}" style="min-height: #{k(:duration, schedule).task_min_height}px;"
                   .name = schedule.task.name
+                  .duration = k(:duration, schedule).ui
                   .actions
                     a.done.pop href="#{done_schedule_url(schedule)}" DONE
                     a.cancel.pop href="#{cancel_schedule_url(schedule)}" Cancel
