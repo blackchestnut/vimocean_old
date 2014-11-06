@@ -12,7 +12,7 @@ class TasksController < ApplicationController
     if @scheduled_task_form.submit scheduled_task_params
       redirect_to calendar_url
     else
-      render action: :new
+      render action: @scheduled_task_form.persisted? ? 'edit' : 'new'
     end
   end
 
@@ -20,13 +20,13 @@ class TasksController < ApplicationController
   def edit
     @schedule = current_user.schedules.includes(:task).find(params[:id])
     @scheduled_task_form = ScheduledTaskForm.new current_user, @schedule
-    render action: :new
+    render action: 'edit'
   end
 
 private
   def scheduled_task_params
     params
       .require(:task)
-      .permit(:id, :name, :started_at, :finished_at)
+      .permit(:id, :name, :role_id, :started_at, :finished_at)
   end
 end

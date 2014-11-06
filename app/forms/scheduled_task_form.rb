@@ -2,9 +2,10 @@ class ScheduledTaskForm
   include ActiveModel::Model
 
   delegate :name, to: :task
-  delegate :id, :started_at, :finished_at, to: :schedule
+  delegate :id, :role_id, :started_at, :finished_at, to: :schedule
 
   validates :name, presence: true
+  validates :role_id, presence: true
   validates :started_at, presence: true
   validates :finished_at, presence: true
 
@@ -16,7 +17,7 @@ class ScheduledTaskForm
 
   def submit params
     task(params[:name]).attributes = params.slice :name
-    schedule(params[:id]).attributes = params.slice :started_at, :finished_at
+    schedule(params[:id]).attributes = params.slice :role_id, :started_at, :finished_at
     if valid?
       schedule.task = task
       schedule.save!

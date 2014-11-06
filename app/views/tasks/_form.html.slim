@@ -1,0 +1,12 @@
+= simple_form_for @scheduled_task_form do |f|
+  = f.input :id, as: :hidden
+  = f.input :name, autofocus: true, input_html: { placeholder: 'Task name' }
+  = f.input :role_id, collection: current_user.roles, input_html: { value: @scheduled_task_form.role_id }
+  = f.input :started_at, input_html: { placeholder: 'Started at' }
+  = f.input :finished_at, input_html: { placeholder: 'Finished at' }
+
+  .actions
+    = f.button :submit, value: 'Ok', class: 'btn_ok pop'
+    a.btn_white.pop href="#{calendar_url}" <
+    - if @scheduled_task_form.id.present?
+      = link_to 'DEL', @schedule, method: :delete, data: { confirm: 'Are you sure?' }, class: 'btn_del pop'

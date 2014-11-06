@@ -1,5 +1,5 @@
 class ScheduleController < ApplicationController
-  before_action :fetch_schedule
+  before_action :fetch_schedule, only: [:done, :cancel, :destroy]
 
   def done
     @schedule.try(:done)

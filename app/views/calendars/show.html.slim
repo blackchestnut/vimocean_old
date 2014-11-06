@@ -18,7 +18,7 @@
           .day_schedule
             - @schedules.each do |schedule|
               - if schedule.started_at >= day.beginning_of_day && schedule.finished_at <= day.end_of_day
-                .task class="#{schedule.state}" style="min-height: #{k(:duration, schedule).task_min_height}px;"
+                .task class="#{schedule.state}" style="min-height: #{k(:duration, schedule).task_min_height}px;" data-edit-url="#{edit_task_url(schedule)}"
                   .name = schedule.task.name
                   .duration = k(:duration, schedule).ui
                   .actions
