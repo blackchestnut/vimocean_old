@@ -10,8 +10,16 @@
   cursor: pointer
   padding: 0
 
-.button, .btn
+@mixin btn_landing_submit
   +btn_form_base
+  border-radius: 4px
+  font-size: 18px
+  font-weight: 200
+  height: 40px
+  width: 314px
+
+.button
+  +btn_landing_submit
 
 @mixin btn_circle_base
   +border-radius(26px)

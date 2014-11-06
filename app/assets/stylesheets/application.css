@@ -1,6 +1,7 @@
 /*
  *= require common
  *= require_tree ./landing/
+ *= require_tree ./devise/
  *= require_tree ./dashboards/
  *= require_tree ./missions/
  *= require_tree ./roles/
