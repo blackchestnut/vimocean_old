@@ -214,7 +214,6 @@ GEM
       railties (>= 3.0, < 4.2)
       slim (~> 2.0)
     slop (3.6.0)
-    spring (1.1.2)
     sprockets (2.11.3)
       hike (~> 1.2)
       multi_json (~> 1.0)
@@ -282,7 +281,6 @@ DEPENDENCIES
   simple_form
   slim
   slim-rails
-  spring
   state_machine
   therubyracer
   turbolinks
