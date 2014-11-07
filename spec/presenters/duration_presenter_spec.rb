@@ -68,7 +68,7 @@ describe DurationPresenter do
 
     context '2.3' do
       let(:finished_at) { now + 2.hours + 20.minutes }
-      it { is_expected.to eq 2 }
+      it { is_expected.to eq 2.3 }
     end
   end
 end
