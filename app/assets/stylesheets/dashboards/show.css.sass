@@ -5,13 +5,16 @@
 .dashboards.show
   .content
     .profile
-      +border-radius(50px)
-      background-color: $primary_color
-      display: inline-block
-      height: 100px
-      position: relative
-      vertical-align: top
       width: 100px
+      position: relative
+
+      .avatar
+        +border-radius(50px)
+        background-color: $primary_color
+        display: inline-block
+        height: 100px
+        vertical-align: top
+        width: 100px
 
       .badge
         +border-radius(16px)

@@ -4,6 +4,7 @@ Rails.application.routes.draw do
 
   resource :dashboard, only: :show
   resource :calendar, only: :show
+  resource :profile, only: [:edit, :update]
   resources :missions
   resources :roles
   get 'roles/:name/add' => 'roles#add', as: :add_role

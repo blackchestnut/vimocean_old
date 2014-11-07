@@ -1,0 +1,8 @@
+.profile.edit
+  .content
+    h1 Your Profile
+    = simple_form_for(@user, url: profile_url) do |f|
+      = f.input :name, required: true, autofocus: true, input_html: { placeholder: 'Your name', maxlength: 200 }
+      .actions
+        = f.button :submit, value: 'Ok', class: 'btn_ok pop'
+        a.btn_white.pop href="#{dashboard_url}" x

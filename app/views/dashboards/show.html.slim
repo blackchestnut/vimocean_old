@@ -1,6 +1,7 @@
 .dashboards.show
   .content
     .profile
+      a.avatar href="#{edit_profile_url}" title='Your profile'
       a.badge.pop href="#{dashboard_url}" 2
     .quests
       - if current_user.mission.blank? || current_user.roles.blank?
