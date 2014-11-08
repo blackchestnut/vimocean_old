@@ -74,6 +74,18 @@ $day_width: 14%
               &:hover
                 background-color: #fdd7d7
 
+            .name
+            .info
+              .role
+                +secondary_text
+                font-size: 12px
+              .duration
+                +disabled_text
+                font-size: 12px
+
+            .actions
+              display: none
+
             &.active
               .actions
                 display: inline-block
@@ -97,15 +109,6 @@ $day_width: 14%
                   +btn_circle_mini_base
                   float: right
                   font-size: 10px
-
-
-            .name
-            .duration
-              +secondary_text
-              font-size: 12px
-            .actions
-              display: none
-
 
           .actions
             margin-top: 10px

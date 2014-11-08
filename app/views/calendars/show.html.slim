@@ -20,7 +20,9 @@
               - if schedule.started_at >= day.beginning_of_day && schedule.finished_at <= day.end_of_day
                 .task class="#{schedule.state}" style="min-height: #{k(:duration, schedule).task_min_height}px;" data-edit-url="#{edit_task_url(schedule)}"
                   .name = schedule.task.name
-                  .duration = k(:duration, schedule).ui
+                  .info
+                    .role = schedule.role.try(:name)
+                    .duration = k(:duration, schedule).ui
                   .actions
                     a.done.pop href="#{done_schedule_url(schedule)}" DONE
                     a.cancel.pop href="#{cancel_schedule_url(schedule)}" Cancel
