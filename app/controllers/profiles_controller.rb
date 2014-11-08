@@ -16,6 +16,6 @@ private
   def profile_params
     params
       .required(:user)
-      .permit(:name)
+      .permit(:name, :time_zone)
   end
 end
