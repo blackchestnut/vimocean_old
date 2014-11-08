@@ -2,8 +2,8 @@
   = f.input :id, as: :hidden
   = f.input :name, autofocus: true, input_html: { placeholder: 'Task name' }
   = f.input :role_id, collection: current_user.roles, input_html: { value: @scheduled_task_form.role_id }
-  = f.input :started_at, input_html: { placeholder: 'Started at' }
-  = f.input :finished_at, input_html: { placeholder: 'Finished at' }
+  = f.input :started_at, input_html: { placeholder: 'Started at', value: k(:time, @scheduled_task_form.started_at).ui }
+  = f.input :finished_at, input_html: { placeholder: 'Finished at', value: k(:time, @scheduled_task_form.finished_at).ui }
 
   .actions
     = f.button :submit, value: 'Ok', class: 'btn_ok pop'
