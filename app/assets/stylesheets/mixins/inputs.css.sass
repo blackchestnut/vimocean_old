@@ -1,0 +1,24 @@
+@import compass/css3
+@import mixins/font-smoothing
+@import mixins/variables
+
+@mixin input_base
+  +font-smoothing
+  +border-radius(4px)
+  font-size: 18px
+  width: 300px
+  height: 32px
+  margin-bottom: 8px
+  border: 1px solid $primary_color
+  padding: 2px 6px
+
+  &:focus
+    outline: none
+    border-color: $primary_color
+    +box-shadow(inset 0 1px 2px rgba(0,155,78,0.075),0 0 12px rgba(0,155,78,0.75))
+
+@mixin select_base
+  +input_base
+  height: 38px
+  width: 314px
+  margin-bottom: 14px
