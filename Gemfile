@@ -1,15 +1,15 @@
 source 'https://rubygems.org'
 
-
 gem 'awesome_print'
 gem 'bcrypt'
 gem 'coffee-rails'
 gem 'compass-rails'
 gem 'devise'
-gem 'keynote', '~> 0.2.3'
 gem 'enumerize'
+gem 'gravatar_image_tag'
 gem 'jbuilder'
 gem 'jquery-rails'
+gem 'keynote', '~> 0.2.3'
 gem 'jquery-turbolinks'
 gem 'pg'
 gem 'rails', '~> 4.1.7'

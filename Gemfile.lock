@@ -83,6 +83,7 @@ GEM
     ffi (1.9.6)
     formatador (0.2.5)
     fssm (0.2.10)
+    gravatar_image_tag (1.2.0)
     guard (2.6.1)
       formatador (>= 0.2.4)
       listen (~> 2.7)
@@ -260,6 +261,7 @@ DEPENDENCIES
   devise
   enumerize
   factory_girl_rails
+  gravatar_image_tag
   guard-rspec
   jbuilder
   jquery-rails

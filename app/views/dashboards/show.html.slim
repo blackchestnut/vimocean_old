@@ -1,8 +1,8 @@
 .dashboards.show
   .content
     .profile
-      a.avatar href="#{edit_profile_url}" title='Your profile'
-      a.badge.pop href="#{dashboard_url}" 2
+      a.avatar href="#{edit_profile_url}" title='Your profile' style="background-image: url(#{raw gravatar_image_url(current_user.email, size: 100)})"
+      /a.badge.pop href="#{dashboard_url}" 2
     .quests
       - if current_user.mission.blank? || current_user.roles.blank?
         h1 At first time
