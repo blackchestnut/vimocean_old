@@ -3,6 +3,7 @@
     h1 Your Profile
     = simple_form_for(@user, url: profile_url) do |f|
       = f.input :name, required: true, autofocus: true, input_html: { placeholder: 'Your name', maxlength: 200 }
+      = f.input :email, disabled: true
       = f.time_zone_select :time_zone, ActiveSupport::TimeZone.us_zones
       .actions
         = f.button :submit, value: 'Ok', class: 'btn_ok pop'

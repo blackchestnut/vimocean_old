@@ -10,5 +10,5 @@ class User < ActiveRecord::Base
   has_many :schedules
 
   validates :name, :email, presence: true
-  validates_inclusion_of :time_zone, in: ActiveSupport::TimeZone.zones_map(&:name).keys
+  #validates_inclusion_of :time_zone, in: ActiveSupport::TimeZone.zones_map(&:name).keys
 end
