@@ -31,19 +31,16 @@
         .schedules
           - if @overdue_schedules.present?
             h1 Overdue tasks
-            ul
-              - @overdue_schedules.each do |schedule|
-                li = schedule.task.name
+            ul = render partial: 'schedule', collection: @overdue_schedules, as: :schedule
+
           - if @closest_schedules.present?
             h1 Closest tasks
-            ul
-              - @closest_schedules.each do |schedule|
-                li = schedule.task.name
+            ul = render partial: 'schedule', collection: @closest_schedules, as: :schedule
+
           - if @tomorrow_schedules.present?
             h1 Tomorrow`s tasks
-            ul
-              - @tomorrow_schedules.each do |schedule|
-                li = schedule.task.name
+            ul = render partial: 'schedule', collection: @tomorrow_schedules, as: :schedule
+
     ul.menu
       li
         - if current_user.mission && current_user.roles.present?

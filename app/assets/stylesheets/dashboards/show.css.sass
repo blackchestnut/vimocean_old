@@ -1,6 +1,7 @@
 @import compass/css3
 @import mixins/font-smoothing
 @import mixins/variables
+@import mixins/texts
 
 .dashboards.show
   .content
@@ -37,7 +38,7 @@
       min-height: 100px
       vertical-align: top
       width: 520px
-      margin: 50px 50px
+      margin: 20px 50px
 
       ul
         margin-top: 30px
@@ -67,6 +68,18 @@
       .schedules
         ul
           margin: 10px 0 20px 0
+          li
+            margin-bottom: 10px
+            .name
+            .role
+              +sub_primary_text
+              font-size: 12px
+            .interval
+              +secondary_text
+              font-size: 12px
+            .duration
+              +secondary_text
+              font-size: 12px
 
     .menu
       display: inline-block

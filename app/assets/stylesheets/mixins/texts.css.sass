@@ -5,14 +5,41 @@
   color: #000
   opacity: 0.86
 
+@mixin sub_primary_text
+  +primary_text
+  opacity: 0.72
+
 @mixin secondary_text
-  color: #000
+  +primary_text
   opacity: 0.54
 
 @mixin disabled_text
-  color: #000
+  +primary_text
   opacity: 0.26
 
+@mixin hint_text
+  +disabled_text
+
 @mixin divider
-  color: #000
+  +primary_text
+  opacity: 0.12
+
+
+@mixin inverse_primary_text
+  color: #FFF
+  opacity: 1.0
+
+@mixin inverse_secondary_text
+  +inverse_primary_text
+  opacity: 0.70
+
+@mixin inverse_disabled_text
+  +inverse_primary_text
+  opacity: 0.3
+
+@mixin inverse_hint_text
+  +inverse_disabled_text
+
+@mixin inverse_divider
+  +inverse_primary_text
   opacity: 0.12
