@@ -77,18 +77,22 @@ $day_width: 14%
             .name
             .info
               .role
-                +secondary_text
-                font-size: 12px
-              .duration
-                +disabled_text
+                +sub_primary_text
                 font-size: 12px
 
-            .actions
+              .duration
+                +secondary_text
+                font-size: 12px
+                margin-top: 4px
+
+            .details
               display: none
 
             &.active
-              .actions
+              .details
                 display: inline-block
+
+              .actions.details
                 width: 100%
 
                 .done

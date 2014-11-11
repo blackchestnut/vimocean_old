@@ -22,8 +22,8 @@
                   .name = schedule.task.name
                   .info
                     .role = schedule.role.try(:name)
-                    .duration = k(:duration, schedule).ui
-                  .actions
+                    .duration #{k(:duration, schedule).short_interval_ui} [ #{k(:duration, schedule).ui} ]
+                  .actions.details
                     a.done.pop href="#{done_schedule_url(schedule)}" DONE
                     a.cancel.pop href="#{cancel_schedule_url(schedule)}" Cancel
                     a.edit.pop href="#{edit_task_url(schedule)}" Edit
