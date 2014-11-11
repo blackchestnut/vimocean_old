@@ -27,6 +27,6 @@ private
   def scheduled_task_params
     params
       .require(:task)
-      .permit(:id, :name, :role_id, :started_at, :finished_at)
+      .permit(:id, :name, :role_id, :started_on, :started_at, :finished_at)
   end
 end
