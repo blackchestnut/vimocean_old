@@ -28,6 +28,8 @@ a
 .input
   width: 400px
   &.short
+    display: inline-block
+    margin-right: 10px
     width: 70px
     input
       width: 54px
@@ -64,6 +66,7 @@ form, .btn_group
 
 form > .actions, .btn_group
   width: 316px
+  margin-top: 10px
   .btn_ok, .btn_primary
     margin-right: 10px
   .btn_del
@@ -75,6 +78,16 @@ p
 
 .muted
   color: $muted_color
+
+.inline_controls
+  a
+    margin-right: 6px
+  .input
+    margin-right: 4px
+
+  .group
+    display: inline
+    margin-right: 12px
 
 // Transform for buttons and others
 .pop_lite, .pop

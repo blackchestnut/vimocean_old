@@ -1,9 +1,10 @@
 /*
  *= require common
- *= require_tree ./landing/
- *= require_tree ./devise/
+ *= require_tree ./calendars/
  *= require_tree ./dashboards/
+ *= require_tree ./devise/
+ *= require_tree ./landing/
  *= require_tree ./missions/
  *= require_tree ./roles/
- *= require_tree ./calendars/
+ *= require_tree ./scheduled_tasks/
  */

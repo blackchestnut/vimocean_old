@@ -3,8 +3,19 @@
   = f.input :name, autofocus: true, input_html: { placeholder: 'Task name' }
   = f.input :role_id, collection: current_user.roles, input_html: { value: @scheduled_task_form.role_id }
   = f.input :started_on, input_html: { placeholder: 'Date', value: k(:time, @scheduled_task_form.started_at).date_ui }
-  = f.input :started_at, wrapper_html: { class: 'short' }, input_html: { placeholder: 'From', value: k(:time, @scheduled_task_form.started_at).time_ui}
-  = f.input :finished_at, wrapper_html: { class: 'short' }, input_html: { placeholder: 'To', value: k(:time, @scheduled_task_form.finished_at).time_ui }
+  .inline_controls
+    .group
+      a.from_sub.btn_white_mini.pop href="#"
+        | -10m
+      = f.input :started_at, wrapper_html: { class: 'short' }, input_html: { placeholder: 'From', value: k(:time, @scheduled_task_form.started_at).time_ui}
+      a.from_add.btn_white_mini.pop href="#"
+        | +10m
+    .group
+      a.to_sub.btn_white_mini.pop href="#"
+        | -10m
+      = f.input :finished_at, wrapper_html: { class: 'short' }, input_html: { placeholder: 'To', value: k(:time, @scheduled_task_form.finished_at).time_ui }
+      a.to_add.btn_white_mini.pop href="#"
+        | +10m
 
   .actions
     = f.button :submit, value: 'Ok', class: 'btn_ok pop'
