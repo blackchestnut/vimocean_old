@@ -1,7 +1,7 @@
 change_time = (input, add_minutes) ->
   date_on = $('#task_started_on').val()
-  date = Date.parse(date_on + ' ' + input.val())
-  date = new Date(date + add_minutes * 60000)
+  date = new Date(new Date(Date.parse(date_on + 'T' + input.val() + ':00')).valueOf() + new Date().getTimezoneOffset()*60000);
+  date = new Date(date.valueOf() + add_minutes * 60000)
   hh_mm = date.toTimeString().match(/\d{2}:\d{2}/)
   input.val(hh_mm[0])
 
