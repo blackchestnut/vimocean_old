@@ -2,9 +2,9 @@
   .content
     h1
       | Calendar
-      a.prev.btn_white_mini.pop href="#prev" <
+      a.prev.btn_white_mini.pop href="#{calendar_url(from: started_at_prev_week)}" <
       span #{@started_at.strftime '%d %b'} ..  #{@finished_at.strftime '%d %b %Y'}
-      a.next.btn_white_mini.pop href="#next" >
+      a.next.btn_white_mini.pop href="#{calendar_url(from: started_at_next_week)}" >
 
     a.close.pop href="#{dashboard_url}" <
 
