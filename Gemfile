@@ -23,9 +23,18 @@ gem 'therubyracer',  platforms: :ruby
 gem 'turbolinks'
 gem 'uglifier'
 
+group :production do
+  gem 'unicorn'
+end
+
 group :development do
   gem 'better_errors'
   gem 'binding_of_caller'
+  gem 'capistrano'
+  gem 'capistrano-rails'
+  gem 'capistrano-bundler'
+  gem 'capistrano-rbenv'
+  gem 'capistrano-cookbook', require: false
   gem 'meta_request'
   gem 'quiet_assets'
   gem 'rack-mini-profiler'
