@@ -47,7 +47,7 @@ class ScheduledTaskForm
     @schedule ||= if id.present?
       @user.schedules.find(id)
     else
-      Schedule.new(user: @user, started_at: Time.zone.now, finished_at: Time.zone.now)
+      Schedule.new(user: @user, state: :pending, started_at: Time.zone.now, finished_at: Time.zone.now)
     end
   end
 end
