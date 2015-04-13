@@ -44,7 +44,7 @@
     ul.menu
       li
         - if current_user.mission && current_user.roles.present?
-          a.btn_menu.pop.hor href="#{calendar_url}" title='Your calendar' C
+          a.btn_menu.pop href="#{calendar_url}" title='Your calendar' C
         - else
           a.btn_menu.disabled.hor href="#calendar" title='Your calendar' C
       li
